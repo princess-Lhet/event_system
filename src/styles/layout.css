@@ -1,0 +1,60 @@
+/* Shared layout styles for Navbar, Footer and Home */
+.app-navbar {
+  background: linear-gradient(90deg,#2b6cb0,#2c7a7b);
+  color: #fff;
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+.brand {
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+.nav-links a { color: rgba(255,255,255,0.95); text-decoration: none; }
+.nav-actions { display:flex; align-items:center; gap:0.5rem; }
+.nav-toggle { display:none; background:transparent; border:0; color:#fff; font-size:1.25rem }
+
+.app-footer { background:#f8f9fa; padding:1rem 0; }
+.footer-container { max-width:1100px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:0 1rem; }
+.footer-links a { margin-left:0.75rem; color:#6c757d; text-decoration:none }
+
+.home-page { padding:2rem 1rem; }
+.home-hero { max-width:900px; margin:2rem auto; text-align:center; padding:2rem; border-radius:8px; background:linear-gradient(180deg, #ffffff, #f7fafc); box-shadow:0 4px 20px rgba(2,6,23,0.06); }
+.home-hero h1 { font-size:2rem; margin-bottom:0.5rem; }
+.home-hero .lead { font-weight:600; color:#4a5568; margin-bottom:1rem; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-links { display:none; }
+  .nav-toggle { display:block }
+  .footer-container { flex-direction:column; gap:0.5rem; text-align:center }
+  .home-hero { padding:1rem }
+}
+
+/* Make page take full height so footer sits at bottom */
+html, body, #root, .App {
+  height: 100%;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+}
+.app-content {
+  flex: 1 0 auto; /* grow and take available space */
+}
+.app-footer {
+  flex-shrink: 0;
+}

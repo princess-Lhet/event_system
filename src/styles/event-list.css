@@ -1,0 +1,121 @@
+.event-card {
+  transition: all 0.2s ease;
+  border: 1px solid var(--border);
+  background: var(--card);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.event-card .status-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(220, 38, 38, 0.9);
+  color: #fff;
+  font-size: 12px;
+  line-height: 1;
+  padding: 6px 8px;
+  border-radius: 6px;
+  z-index: 2;
+}
+
+.event-card.bg-cover, .event-card.bg-fallback {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  min-height: 220px;
+}
+
+.event-card.bg-fallback {
+  background: radial-gradient(600px 300px at 10% 0%, rgba(139, 92, 246, 0.35), transparent 60%),
+              radial-gradient(600px 300px at 90% 100%, rgba(59, 130, 246, 0.35), transparent 60%),
+              linear-gradient(180deg, color-mix(in srgb, var(--card) 88%, transparent), var(--card));
+}
+
+
+.event-card .bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.45));
+  pointer-events: none;
+}
+
+.event-card.bg-cover .card-body,
+.event-card.bg-fallback .card-body {
+  position: relative;
+  color: #fff;
+}
+
+.event-card.bg-cover .event-meta,
+.event-card.bg-fallback .event-meta {
+  color: rgba(255,255,255,0.9);
+}
+
+.event-card .event-media {
+  width: 100%;
+  height: 112px;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+
+.event-card .event-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.event-card .event-media.fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(600px 300px at 10% 0%, rgba(139, 92, 246, 0.35), transparent 60%),
+              radial-gradient(600px 300px at 90% 100%, rgba(59, 130, 246, 0.35), transparent 60%),
+              linear-gradient(180deg, color-mix(in srgb, var(--card) 88%, transparent), var(--card));
+  color: var(--text);
+  font-weight: 600;
+}
+
+.event-card .card-body {
+  padding: 12px;
+  flex: 1;
+}
+
+.event-card h5 {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.event-card p {
+  color: var(--muted);
+  margin-bottom: 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+.event-meta {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-top: 8px;
+}
+
+.event-meta svg {
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+  color: var(--primary);
+}
